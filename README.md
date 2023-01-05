@@ -14,19 +14,19 @@ Should work similary on Linux but has been untested
 
 2. Launch conda terminal and copy/paste the following:
 
-  `conda create -n nv5_test python=3.8 -y`
+    `conda create -n nv5_test python=3.8 -y`
   
-  `conda activate nv5_test`
+    `conda activate nv5_test`
   
-  `conda install -c anaconda scikit-learn==1.0.2 -y`
+    `conda install -c anaconda scikit-learn==1.0.2 -y`
   
-  `conda install -c anaconda pandas==1.5.2 -y`
+    `conda install -c anaconda pandas==1.5.2 -y`
   
-  `conda install -c conda-forge matplotlib==3.6.2 -y`
+    `conda install -c conda-forge matplotlib==3.6.2 -y`
   
-  `pip install names`
+    `pip install names`
   
-  `git clone https://github.com/zachariahBinx/nv5_test`
+    `git clone https://github.com/zachariahBinx/nv5_test`
   
 3. Close the terminal
 
