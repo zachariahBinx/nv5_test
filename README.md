@@ -25,6 +25,8 @@ Should work similary on Linux but has been untested
     `conda install -c conda-forge matplotlib==3.6.2 -y`
   
     `pip install names`
+    
+    * If pip errors to install names, you can cut and paste the `names` and `names-0.3.0.dist-info` folders into your env sitepackages directory (C:/users/zlesl/anaconda3/envs/nv5_test/Lib/site-packages/)
   
     `git clone https://github.com/zachariahBinx/nv5_test`
   
