@@ -60,9 +60,9 @@ Should work similary on Linux but has been untested
 5. `filter_type` - both with nearest and rad_dist results, filter by ascending or descending of the following:
   `[elevDiff, elevDiff_inverse, slope, slope_inverse, dist, dist_inverse, elevation, elevation_inverse, height, height_inverse, floors, floors_inverse, year, year_inverse]`
   
-6. `more_src` - Number of entries to add to locations/src points - used for profiling and discovering limiting factors
+6. `more_src` - Number of entries to add to locations/src points - used for profiling and discovering bottle necks
  
-7. `more_can` - Number of entries to add to canidates - used for profiling and discovering limiting factors
+7. `more_can` - Number of entries to add to canidates - used for profiling and discovering bottle necks
   
 ### In order to run only one location/src point through user must:
 
