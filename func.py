@@ -200,17 +200,20 @@ def create_graphs(df_src, df_can, df_filter_near, df_filter_rad, rad_dist, neare
     # x_values = [src_xy[0],nearest_xy[0]]
     # y_values = [src_xy[1],nearest_xy[1]]
     # ax1.plot(x_values, y_values, 'black', label='closest', zorder=0)
-    # ax1.annotate(f'Dist={round(df_filter_near.loc[0]["dist"],2)}ft', xy=(((x_values[0]+x_values[1])/2),((y_values[0]+y_values[1])/2)), textcoords='offset points', xytext=(20,20), size=8, arrowprops=dict(arrowstyle="->"))
-    # ax1.annotate(src_point, (df_src.loc[src_point]['X'], df_src.loc[src_point]['Y']), ha='center', size='5', textcoords='offset points', xytext=(0,4))
+    # ax1.annotate(f'Dist={round(df_filter_near.loc[0]["dist"],2)}ft', xy=(((x_values[0]+x_values[1])/2),((y_values[0]+y_values[1])/2)), textcoords='offset points', xytext=(20,30), size=8, arrowprops=dict(arrowstyle="->"))
+    # ax1.annotate(f'#{src_point}', (df_src.loc[src_point]['X'], df_src.loc[src_point]['Y']), ha='center', size='5', textcoords='offset points', xytext=(0,4))
     # for i, _ in enumerate(df_can.index):
-    #     ax1.annotate(i, (df_can.loc[i]['X'], df_can.loc[i]['Y']), ha='center', size='5', textcoords='offset points', xytext=(0,4))
-    # ax1.legend(loc='lower left', shadow=True, fancybox=True)
+    #     ax1.annotate(f'#{i}', (df_can.loc[i]['X'], df_can.loc[i]['Y']), ha='center', size='5', textcoords='offset points', xytext=(0,4))
+    # ax1.legend(loc='lower left', shadow=True, fancybox=True, markerscale=0.5)
     # plt.title('Nearest Neighbors')
     # plt.xlabel('X (ft)')
     # plt.ylabel('Y (ft)')
-    # not setting set_aspect forces into a box and can be misleading
-    # ax1.set_aspect('equal')
-    # plt.show()
+    # plt.xlim(min(df_filter_near['X'])-1000, max(df_filter_near['X'])+1000)
+    # plt.ylim(min(df_filter_near['Y'])-1000, max(df_filter_near['Y'])+1000)
+    # plt.locator_params(axis='x', nbins=5)
+    # # not setting set_aspect forces into a box and can be misleading
+    # # ax1.set_aspect('equal')
+    # # plt.show()
     # plt.savefig('./Nearest_Neighbor.png')
 
     # fig2,ax2 = plt.subplots()
@@ -223,18 +226,20 @@ def create_graphs(df_src, df_can, df_filter_near, df_filter_rad, rad_dist, neare
     # x_values_rad = [src_xy[0],src_xy[0]-rad_dist]
     # y_values_rad = [src_xy[1],src_xy[1]]
     # ax2.plot(x_values_rad, y_values_rad, 'black', linestyle='dashed', label='radius', zorder=0)
-    # ax2.annotate(src_point, (df_src.loc[src_point]['X'], df_src.loc[src_point]['Y']), ha='center', size='6', textcoords='offset points', xytext=(0,4))
+    # ax2.annotate(f'#{src_point}', (df_src.loc[src_point]['X'], df_src.loc[src_point]['Y']), ha='center', size='6', textcoords='offset points', xytext=(0,4))
     # ax2.annotate(f'{rad_dist}ft', xy=(((x_values_rad[0]+x_values_rad[1])/2),((y_values_rad[0]+y_values_rad[1])/2)), textcoords='offset points', xytext=(0,-20), size=6, arrowprops=dict(arrowstyle="->"))
     # for i, _ in enumerate(df_can.index):
-    #     ax2.annotate(i, (df_can.loc[i]['X'], df_can.loc[i]['Y']), ha='center', size='6', textcoords='offset points', xytext=(0,4))
-    # ax2.legend(loc='upper right', shadow=True, fancybox=True, prop={'size': 6}, markerscale=0.5)
+    #     ax2.annotate(f'#{i}', (df_can.loc[i]['X'], df_can.loc[i]['Y']), ha='center', size='6', textcoords='offset points', xytext=(0,4))
+    # ax2.legend(loc='lower right', shadow=True, fancybox=True, prop={'size': 6}, markerscale=0.5)
     # ax2.set_aspect('equal')
     # plt.xlabel('X (ft)')
     # plt.ylabel('Y (ft)')
     # plt.title('Nearest Neigbors Within Radius')
-    # plt.xlim(min(df_filter_rad['X'])-1000, max(df_filter_rad['X'])+1000)
+    # plt.xlim(min(df_filter_rad['X'])-1000, max(df_filter_rad['X'])+1500)
     # plt.ylim(min(df_filter_rad['Y'])-1000, max(df_filter_rad['Y'])+1000)
+    # plt.locator_params(axis='x', nbins=5)
     # plt.savefig('./Nearest_Neighbor_Radius.png')
+    # plt.show()
 
 
     x_pos_near, x_pos_far = [], []
@@ -258,20 +263,21 @@ def create_graphs(df_src, df_can, df_filter_near, df_filter_rad, rad_dist, neare
 
     # plt.bar(x_pos, height, width=width)
     fig3, ax3 = plt.subplots()
-    plt.bar(0, 20, width=50, color="black", label='src point')
+    plt.bar(0, 20, width=50, color="red", label='src point')
     plt.bar(x_pos_near_scale, height_near, width=width_near, color="blue", label=f'nearest {nearest}')
-    plt.bar(x_pos_far_scale, height_far, width=width_far, color="red", label='Next nearest')
+    plt.bar(x_pos_far_scale, height_far, width=width_far, color="orange", label='Next nearest')
     plt.xlim(-100, max(df_graph["dist"]+200))
     plt.ylim(0,max(df_graph["height"]+20))
     plt.title('Profile View Distance to Nearest Neighbor')
     plt.xlabel('Distance (ft)')
     plt.ylabel('Height (ft)')
-    ax3.annotate(src_point, (0,20), ha='center', size='6', textcoords='offset points', xytext=(0,3))
+    ax3.annotate(f'#{src_point}', (0,20), ha='center', size='6', textcoords='offset points', xytext=(0,3))
     for i, _ in enumerate(df_graph.index):
-        ax3.annotate(df_graph.loc[i]['buildingIDX'], (df_graph.loc[i]['dist'], df_graph.loc[i]['height']), ha='center', size='6', textcoords='offset points', xytext=(0,3))
+        ax3.annotate(f'#{df_graph.loc[i]["buildingIDX"]}', (df_graph.loc[i]['dist'], df_graph.loc[i]['height']), ha='center', size='6', textcoords='offset points', xytext=(0,3))
     ax3.set_xticks(xticks)
-    ax3.legend(loc='upper left', shadow=True, fancybox=True)
-    plt.savefig('./Profile_view.png')
+    ax3.legend(loc='upper left', shadow=True, fancybox=True, markerscale=0.5)
+    # plt.savefig('./Profile_view.png')
+    # plt.show()
 
 def save_files(df_near, df_rad, src_point, df_src):
     if not os.path.exists('./output_radius/'):
