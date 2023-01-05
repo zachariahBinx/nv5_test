@@ -32,11 +32,11 @@ Should work similary on Linux but has been untested
 
 ### Using your favorite IDE (vs code)
 
-1. Luanch a bash terminal instance
+1. Launch a bash terminal instance
 
-2. activate your env
+2. Activate your env
 
-3. run main.py
+3. Run main.py
 
 # Using the code
 
