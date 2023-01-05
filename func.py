@@ -9,6 +9,7 @@ import os
 import names
 import random
 from datetime import date
+import shutil
 
 def add_more_src(df_src, more):
     df = pd.DataFrame(columns=['Name', 'X', 'Y', 'Elevation'])
@@ -282,8 +283,10 @@ def create_graphs(df_src, df_can, df_filter_near, df_filter_rad, rad_dist, neare
 def save_files(df_near, df_rad, src_point, df_src):
     if not os.path.exists('./output_radius/'):
         os.mkdir('./output_radius/')
+
     if not os.path.exists('./output_nearest/'):
         os.mkdir('./output_nearest/')
+
     src_name = df_src.loc[src_point]["Name"]
     save_name = src_name.replace(" ", "_")
 
