@@ -8,8 +8,6 @@ filter_types = ['elevDiff', 'elevDiff_inverse',
                 'height', 'height_inverse', 
                 'floors', 'floors_inverse', 
                 'year', 'year_inverse']
-
-When setting more_src and more_can, run a profiler tool such as (pyinstrument main.py) to locate limiting factors
 '''
 
 def nearest_neighbor(canidates, locations, algorithm='KDTree', dist_metric='euclidean', nearest=4, rad_dist=0, filter_type='dist', more_src=0, more_can=0):
