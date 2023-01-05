@@ -9,7 +9,9 @@
 ## Setting Up Environment on Windows 10 
 
 Should work similary on Linux but has been untested
+
 1. Download [Anaconda](https://www.anaconda.com/)
+
 2. Launch conda terminal and copy/paste the following:
 
   `conda create -n nv5_test python=3.8 -y`
@@ -23,6 +25,18 @@ Should work similary on Linux but has been untested
   `conda install -c conda-forge matplotlib==3.6.2 -y`
   
   `pip install names`
+  
+  `git clone https://github.com/zachariahBinx/nv5_test`
+  
+3. Close the terminal
+
+### Using your favorite IDE (vs code)
+
+1. Luanch a bash terminal instance
+
+2. activate your env
+
+3. run main.py
 
 # Using the code
 
