@@ -66,17 +66,17 @@ Should work similary on Linux but has been untested
   
 ### In order to run only one location/src point through user must:
 
-1. Comment in line 15
+1. Comment in line 22
 
-2. Comment out lines 32-33
+2. Comment out lines 39-40
 
-3. Highlight and shift-tab lines 35-54
+3. Highlight and shift-tab lines 32-61
 
 ### To use the graphing features:
 
 1. Follow the 3 steps above
 
-2. Comment in lines 41, 46, 51, and 56
+2. Comment in lines 48, 53, 58, and 63
 
 3. Best to change `nearest` to something like 3 and `rad_dist` to 1000-1500
 
