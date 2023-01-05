@@ -24,14 +24,14 @@ Should work similary on Linux but has been untested
   
   `pip install names`
 
-#Using the code
+# Using the code
 
-###There are 2 required parameters the user must have to run:
+### There are 2 required parameters the user must have to run:
 
 1. canidates (buildings.csv)
 2. locations/src points (queires.csv)
 
-###The remaining 7 parameters can be changed based on users preference.
+### The remaining 7 parameters can be changed based on users preference.
 
 1. `algorithm` - [scikit learn nearest neighbor](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.NearestNeighbors.html) [KDTree](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KDTree.html) or [BallTree](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.BallTree.html)
 
@@ -48,20 +48,20 @@ Should work similary on Linux but has been untested
  
 7. `more_can` - Number of entries to add to canidates - used for profiling and discovering limiting factors
   
-###In order to run only one location/src point through user must:
+### In order to run only one location/src point through user must:
 
-1. comment in line 15
+1. Comment in line 15
 
-2. comment out lines 32-33
+2. Comment out lines 32-33
 
-3. highlight and shift-tab lines 35-54
+3. Highlight and shift-tab lines 35-54
 
-###To use the graphing features:
+### To use the graphing features:
 
-1. follow the 3 steps above
+1. Follow the 3 steps above
 
-2. comment in lines 41, 46, 51, and 56
+2. Comment in lines 41, 46, 51, and 56
 
-3. best to change `nearest` to something like 3 and `rad_dist` to 1000-1500
+3. Best to change `nearest` to something like 3 and `rad_dist` to 1000-1500
 
-4. may need to adjust `xlim` and `ylim` within the `create_graph` function within the `func.py` file
+4. May need to adjust `xlim` and `ylim` within the `create_graph` function within the `func.py` file
