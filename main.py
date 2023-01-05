@@ -56,4 +56,4 @@ def nearest_neighbor(canidates, locations, algorithm='KDTree', dist_metric='eucl
     # create_graphs(starting_locations, building_locations, near_filter, rad_filter, rad_dist, nearest, graph_filter, src_point) #for graphs
 
 if __name__ == "__main__":
-    nearest_neighbor('./buildings.csv', './queries.csv', nearest=3, filter_type='dist', rad_dist=1000)
+    nearest_neighbor('./buildings.csv', './queries.csv')
