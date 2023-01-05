@@ -12,8 +12,11 @@ filter_types = ['elevDiff', 'elevDiff_inverse',
 
 def nearest_neighbor(canidates, locations, algorithm='KDTree', dist_metric='euclidean', nearest=4, rad_dist=0, filter_type='dist', more_src=0, more_can=0):
     # Remove old run folders
-    shutil.rmtree('./output_nearest/')
-    shutil.rmtree('./output_radius/')
+    paths = ['./output_nearest/','./output_radius/']
+    for i in paths:
+        if os.path.exists(i):
+            shutil.rmtree('./output_nearest/')
+            shutil.rmtree('./output_radius/')
 
     # Use for testing and graph making
     # src_point = 3
