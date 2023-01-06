@@ -70,7 +70,7 @@ Should work similary on Linux but has been untested
 
 2. Comment out lines 39-40
 
-3. Highlight and shift-tab lines 32-61
+3. Highlight and shift-tab lines 42-61
 
 ### To use the graphing features:
 
